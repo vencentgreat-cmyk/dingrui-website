@@ -143,6 +143,25 @@ footer{background:#080604;color:#928674;text-align:center;padding:28px 24px;bord
 
 @media(max-width:900px){.series,.adv,.certs,.scope-grid{grid-template-columns:1fr 1fr}.two,.contact-grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.factory-gallery{grid-template-columns:1fr 1fr}.factory-photo.large{grid-column:span 2}.process{grid-template-columns:1fr 1fr}.case-card{grid-template-columns:1fr}.case-visual{height:120px}.hero-title{font-size:42px;letter-spacing:7px}.stats-inner{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){nav{height:58px}.menu-btn{display:inline-block}.nav-menu{display:none;position:absolute;top:58px;left:0;right:0;background:var(--dark2);flex-direction:column;align-items:stretch;border-top:1px solid rgba(184,147,74,.25)}.nav-menu.open{display:flex}.nav-menu a{height:46px;border-bottom:1px solid rgba(255,255,255,.08)}.nav-cta{display:none}.series,.adv,.certs,.scope-grid,.process,.metrics,.form-row,.cases-preview,.modal-params,.factory-gallery{grid-template-columns:1fr}.factory-photo.large{grid-column:span 1}.factory-photo img,.factory-photo.large img{height:auto}.section,.body{padding:52px 18px}.hero{min-height:720px}.hero-title{font-size:34px;letter-spacing:5px}.stats{position:relative;margin-top:30px}.hero{height:auto;padding-top:120px;padding-bottom:0}.hero-content{padding-bottom:20px}.title{font-size:24px}}
+
+/* v20: lighten home cover and improve dynamic order rows */
+.hero::before{opacity:.62!important;filter:saturate(1.05) brightness(1.18)!important}
+.hero::after{background:linear-gradient(150deg,rgba(255,255,255,.42),rgba(9,69,112,.30),rgba(255,255,255,.38))!important}
+.grid-bg{background-image:linear-gradient(rgba(15,143,95,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(11,94,168,.10) 1px,transparent 1px)!important}
+.hero-title,.hero-slogan{color:#fff!important;text-shadow:0 2px 16px rgba(6,52,95,.48),0 0 2px rgba(6,52,95,.8)}
+.hero-en,.hero-sub{color:rgba(255,255,255,.88)!important;text-shadow:0 1px 10px rgba(6,52,95,.45)}
+.hero-kicker{color:#03d995!important;text-shadow:0 1px 10px rgba(6,52,95,.3)}
+.stats{background:rgba(255,255,255,.76)!important;backdrop-filter:blur(10px);border-top:1px solid rgba(15,143,95,.18)!important}
+.lab{color:#325364!important}
+.product-row-head{display:grid;grid-template-columns:1fr 120px 34px;gap:10px;margin:0 0 6px;color:var(--muted);font-size:12px}
+.order-products{grid-template-columns:1fr 120px 34px!important;align-items:center}
+.order-products .remove-product{width:34px;height:34px;border:1px solid var(--line);background:#f4f9fc;color:#0b5ea8;cursor:pointer;font-weight:800}
+.order-products:first-child .remove-product{visibility:hidden}
+.add-product-btn{display:inline-block;margin-top:4px;border:1px solid var(--green);background:#fff;color:var(--green);padding:9px 12px;font-weight:800;cursor:pointer}
+.add-product-btn:disabled{opacity:.45;cursor:not-allowed}
+.product-count-note{font-size:12px;color:var(--muted);margin-top:8px}
+@media(max-width:900px){.product-row-head{display:none}.order-products{grid-template-columns:1fr!important}.order-products .remove-product{width:100%;visibility:visible!important}}
+
 </style>
 </head>
 <body>
@@ -577,9 +596,10 @@ footer{background:#080604;color:#928674;text-align:center;padding:28px 24px;bord
         <div class="form-row"><div class="field"><label>联系电话 / Phone</label><input name="phone" required placeholder="手机号或座机"/></div><div class="field"><label>期望送达时间 / Delivery Time</label><input name="deliveryTime" placeholder="例如：明天下午 / 本周五前"/></div></div>
         <div class="field"><label>收货地址 / Delivery Address</label><input name="address" required placeholder="省市区 + 详细地址"/></div>
         <div class="field"><label>订购产品 / Products</label>
-          <div class="order-products"><select name="product1"><option>DR-150 多功能通用型界面剂</option><option>DR-150S 水性非吸性界面剂</option><option>DR-200 水性非吸性界面剂</option><option>DR 固砂宝</option><option>DR-500 商用水泥基自流平</option><option>DR-600 水泥基厚层自流平</option><option>DR-650 工业级高强度自流平水泥</option><option>DR-700 室外快干自流平</option><option>DR-750 道路修补砂浆</option><option>DR-800 石膏基自流平水泥</option><option>DR-300 高性能PVC地板粘合剂</option><option>DR-740 高性能PVC地板粘合剂</option><option>DR-760 高性能PVC地板粘合剂</option><option>DR-780 高性能PVC地板粘合剂</option><option>DR-2000S 高性能PVC地板粘合剂</option><option>其他产品</option></select><input name="quantity1" required placeholder="数量"/></div>
-          <div class="order-products"><select name="product2"><option value="">可选：第二个产品</option><option>DR-150 多功能通用型界面剂</option><option>DR-500 商用水泥基自流平</option><option>DR-600 水泥基厚层自流平</option><option>DR-650 工业级高强度自流平水泥</option><option>DR-700 室外快干自流平</option><option>DR-750 道路修补砂浆</option><option>DR-800 石膏基自流平水泥</option><option>DR-300 高性能PVC地板粘合剂</option><option>其他产品</option></select><input name="quantity2" placeholder="数量"/></div>
-          <div class="order-products"><select name="product3"><option value="">可选：第三个产品</option><option>DR-150 多功能通用型界面剂</option><option>DR-500 商用水泥基自流平</option><option>DR-600 水泥基厚层自流平</option><option>DR-650 工业级高强度自流平水泥</option><option>DR-700 室外快干自流平</option><option>DR-750 道路修补砂浆</option><option>DR-800 石膏基自流平水泥</option><option>DR-300 高性能PVC地板粘合剂</option><option>其他产品</option></select><input name="quantity3" placeholder="数量"/></div>
+          <div class="product-row-head"><span>产品</span><span>数量</span><span></span></div>
+          <div id="orderProductsContainer"></div>
+          <button type="button" class="add-product-btn" id="addProductBtn" onclick="addProductRow()">+ 添加额外产品</button>
+          <div class="product-count-note">默认填写 1 个产品，可继续添加，最多 8 行。</div>
         </div>
         <div class="form-row"><div class="field"><label>是否开发票 / Invoice</label><select name="invoice"><option>否</option><option>是</option><option>后续确认</option></select></div><div class="field"><label>付款状态 / Payment</label><select name="payment"><option>未付款，等待确认</option><option>已付款，稍后提供凭证</option><option>账期客户</option></select></div></div>
         <div class="field"><label>备注 / Notes</label><textarea name="notes" placeholder="例如：项目名称、卸货要求、销售联系人、特殊配送要求等"></textarea></div>
@@ -603,6 +623,70 @@ function openProduct(model){const p=products.find(x=>x.model===model);if(!p)retu
 function closeModal(e){if(e&&e.target.id!=='modalOverlay')return;document.getElementById('modalOverlay').classList.remove('open')}
 function submitInquiry(e){e.preventDefault();alert(document.body.classList.contains('en')?'Inquiry noted. Please contact us by phone or WeChat to confirm the details.':'询价信息已记录，请通过电话或微信进一步确认需求。')}
 
+
+const orderProductOptions = [
+  'DR-150 多功能通用型界面剂',
+  'DR-500 商用水泥基自流平',
+  'DR-600 水泥基厚层自流平',
+  'DR-650 工业级高强度自流平水泥',
+  'DR-700 室外快干自流平',
+  'DR-750 道路修补砂浆',
+  'DR-800 石膏基自流平水泥',
+  'DR-300 高性能PVC地板粘合剂'
+];
+const maxOrderProductRows = 8;
+function buildProductOptions(rowIndex){
+  const first = rowIndex === 1 ? '' : `<option value="">可选：第${rowIndex}个产品</option>`;
+  return first + orderProductOptions.map(p => `<option>${p}</option>`).join('');
+}
+function addProductRow(){
+  const wrap = document.getElementById('orderProductsContainer');
+  const count = wrap.querySelectorAll('.order-products').length;
+  if(count >= maxOrderProductRows) return;
+  const rowIndex = count + 1;
+  const row = document.createElement('div');
+  row.className = 'order-products';
+  row.dataset.row = rowIndex;
+  row.innerHTML = `<select name="product${rowIndex}" ${rowIndex === 1 ? 'required' : ''}>${buildProductOptions(rowIndex)}</select><input name="quantity${rowIndex}" ${rowIndex === 1 ? 'required' : ''} placeholder="数量"/><button type="button" class="remove-product" onclick="removeProductRow(this)">×</button>`;
+  wrap.appendChild(row);
+  updateAddProductButton();
+}
+function removeProductRow(btn){
+  const wrap = document.getElementById('orderProductsContainer');
+  const rows = [...wrap.querySelectorAll('.order-products')];
+  if(rows.length <= 1) return;
+  btn.closest('.order-products').remove();
+  renumberProductRows();
+  updateAddProductButton();
+}
+function renumberProductRows(){
+  const wrap = document.getElementById('orderProductsContainer');
+  [...wrap.querySelectorAll('.order-products')].forEach((row, index) => {
+    const rowIndex = index + 1;
+    row.dataset.row = rowIndex;
+    const select = row.querySelector('select');
+    const input = row.querySelector('input');
+    select.name = `product${rowIndex}`;
+    input.name = `quantity${rowIndex}`;
+    select.required = rowIndex === 1;
+    input.required = rowIndex === 1;
+    const current = select.value;
+    select.innerHTML = buildProductOptions(rowIndex);
+    if(orderProductOptions.includes(current)) select.value = current;
+  });
+}
+function updateAddProductButton(){
+  const btn = document.getElementById('addProductBtn');
+  if(!btn) return;
+  const count = document.querySelectorAll('#orderProductsContainer .order-products').length;
+  btn.disabled = count >= maxOrderProductRows;
+  btn.textContent = count >= maxOrderProductRows ? '已达到最多 8 个产品' : '+ 添加额外产品';
+}
+function initOrderProducts(){
+  const wrap = document.getElementById('orderProductsContainer');
+  if(wrap && wrap.children.length === 0) addProductRow();
+}
+
 async function submitOrder(e){
   e.preventDefault();
   const form=e.target;
@@ -619,11 +703,13 @@ async function submitOrder(e){
     status.className='order-status success';
     status.textContent='订单需求已提交，销售/内勤会尽快确认。订单号：'+result.orderId;
     form.reset();
+    const orderWrap=document.getElementById('orderProductsContainer');if(orderWrap){orderWrap.innerHTML='';addProductRow();}
   }catch(err){
     status.className='order-status error';
     status.textContent='提交失败：'+err.message+'。请检查 Netlify Function 和钉钉环境变量配置。';
   }finally{btn.disabled=false;}
 }
+initOrderProducts();
 showPage('home');
 </script>
 </body>
