@@ -260,6 +260,34 @@ body{background:linear-gradient(180deg,#e7eef4 0%,#eef4f8 100%)}
 .metric h4,.cert h3,.video-content h2{color:#103152}
 .metric p,.cert p,.video-content p{color:#5a6f7f}
 
+
+/* v5 about section image layout fix */
+#page-about .two{
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+#page-about .text{
+  max-width: none;
+}
+#page-about .image-stack{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 4px;
+}
+#page-about .image-stack img{
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 8px 18px rgba(6,52,95,.06);
+}
+@media(max-width:900px){
+  #page-about .image-stack{grid-template-columns:1fr;}
+}
+
 </style>
 </head>
 <body>
