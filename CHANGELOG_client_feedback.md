@@ -13,3 +13,9 @@
 - 箱房-730 新图未在本次上传文件中单独提供，因此暂未替换。
 - “删除这张图片”指向的具体图片不够明确，暂未做不可逆删除，建议预览后确认。
 - 如果订单群和网页客服群不同，需要在 Netlify 设置 `DINGTALK_ORDER_WEBHOOK` 和 `DINGTALK_SERVICE_WEBHOOK`；如果相同，保留原 `DINGTALK_WEBHOOK` 即可。
+
+
+## v6 - 检测报告二维码修复
+- 新增检测报告页面 `web/test-report.html`。
+- 新增报告图片 `web/assets/reports/WT2025B01C00106-page1.jpg`。
+- 联系我们板块的检测报告二维码已替换为指向官网检测报告页面的新二维码。
